@@ -38,6 +38,9 @@ var heatMap = function (id, generatorName, xAxisMetric, yAxisMetric, color1, col
   // Add form controls
   var genSelect = controls
     .append("label")
+    .style({
+      "padding": "1em"
+    })
     .text("Generator")
     .append("select")
     .on("change", function() {
@@ -48,6 +51,9 @@ var heatMap = function (id, generatorName, xAxisMetric, yAxisMetric, color1, col
 
   var xSelect = controls
     .append("label")
+    .style({
+      "padding": "1em"
+    })
     .text("x axis")
     .append("select")
     .on("change", function() {
@@ -58,6 +64,9 @@ var heatMap = function (id, generatorName, xAxisMetric, yAxisMetric, color1, col
 
   var ySelect = controls
     .append("label")
+    .style({
+      "padding": "1em"
+    })
     .text("y axis")
     .append("select")
     .on("change", function() {
