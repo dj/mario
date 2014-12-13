@@ -1,0 +1,15 @@
+body {
+  font: 12px sans-serif;
+}
+
+span {
+  display: inline-block;
+}
+
+.axis path,
+.axis line {
+  /*color: #fff;*/
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
