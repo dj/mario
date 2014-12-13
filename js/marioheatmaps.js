@@ -184,6 +184,12 @@ var drawSVG = function(id, generatorName, xAxisMetric, yAxisMetric, color1, colo
       })
       .text(yAxisMetric)
 
+    // Initialize "tooltip" for bins
+    tip = d3.tip()
+      .attr('class', 'd3-tip')
+      .offset([-10, 0])
+      .html(function(d) { return "x:" + d.x + "<br>y:" + d.y + "<br>" + d.length + "/1000 levels"; });
+    svg.call(tip)
 
     // DRAW BINS
     svg.selectAll(".square")
@@ -194,7 +200,9 @@ var drawSVG = function(id, generatorName, xAxisMetric, yAxisMetric, color1, colo
       .attr("y", function(d) { return y(d.y)-yinv(side); })
       .attr("width", x(side))
       .attr("height", yinv(side))
-      .style("fill", function(d) { return color(d.length); });
+      .style("fill", function(d) { return color(d.length); })
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
   });
 }
 
