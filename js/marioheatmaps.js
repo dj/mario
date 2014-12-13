@@ -36,39 +36,39 @@ var heatMap = function (id, generatorName, xAxisMetric, yAxisMetric, color1, col
     .append("div")
     .attr("class", "controls")
   // Add form controls
-  var genSelect = controls
-    .append("label")
+  controls.append("label")
     .style({
       "padding": "1em"
     })
     .text("Generator")
-    .append("select")
+    
+  var genSelect = controls.append("select")
     .on("change", function() {
       var selectedVal = this.options[this.selectedIndex].value;
       this['generatorName'] = selectedVal;
       drawSVG(id, selectedVal, xAxisMetric, yAxisMetric, color1, color2);
     });
 
-  var xSelect = controls
-    .append("label")
+  controls.append("label")
     .style({
       "padding": "1em"
     })
     .text("x axis")
-    .append("select")
+
+  var xSelect = controls.append("select")
     .on("change", function() {
       var selectedVal = this.options[this.selectedIndex].value;
       this['xAxisMetric'] = selectedVal;
       drawSVG(id, generatorName, selectedVal, yAxisMetric, color1, color2);
     });
 
-  var ySelect = controls
-    .append("label")
+  controls.append("label")
     .style({
       "padding": "1em"
     })
     .text("y axis")
-    .append("select")
+    
+  var ySelect = controls.append("select")
     .on("change", function() {
       var selectedVal = this.options[this.selectedIndex].value;
       this['yAxisMetric'] = selectedVal;
